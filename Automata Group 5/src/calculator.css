@@ -1,0 +1,65 @@
+.blkText{
+    color: black;
+}
+.sol{
+    font-size: 50px;
+}
+
+body{
+    background-color: rgb(5, 5, 29)
+}
+
+.text{
+    color: rgb(35, 31, 47); 
+}
+.stringBox{
+    background-color: #efefef;
+    margin-left: 10px;
+    margin-top: 30px;
+    width: 460px;
+}
+
+.solution{
+    background-color: #efefef;
+    margin-left: 500px;
+    height: 900px;
+    width: 1300px;
+}
+
+#regEx{
+    overflow: hidden;
+    color:rgb(0, 0, 0)
+} 
+#Dfa{
+    color: black
+}
+.btn{
+    background-color: rgb(237, 140, 66);
+}
+#calcExecute:hover {
+    background-color: rgb(243, 255, 238); 
+    color: rgb(35, 31, 47); 
+}
+#Dfa:hover {
+    background-color:  rgb(243, 255, 238);
+    color: rgb(35, 31, 47) 
+}
+#regEx:hover {
+    background-color:  rgb(243, 255, 238);
+    color: rgb(35, 31, 47) 
+}
+.container-fluid{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#calcValidate{
+    color:rgb(0, 0, 0)
+}
+.container-fluid{
+    margin-top: 250px;
+}
+.bottomcontainer-fluid{
+    margin-top: -710px;
+    margin-left: 50px;
+}

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AUTOMATA</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/letters.css">
+    <script type="text/javascript" src="src/DFA.js"></script>
+  </head>
+  <body>
+     <div class="container-fluid">
+        <div class="row">
+            <!-- LEFT SIDE OF SCREEN -->
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 rounded-5 " >
+                <!-- DROPDROWN FOR REGEX-->
+                <div class="dropdown d-flex">
+                    <button class="btn btn-secondary dropdown-toggle w-50 my-2 " type="button" data-bs-toggle="dropdown" aria-expanded="false" id="regEx">
+                      REGULAR EXPRESSIONS
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item reg1"  id="regex1">(bab)*(b+a)(bab+aba)(a+b)*(aa+bb)*(b+a+bb)(a+b)*(aa+bb)</a></li>
+                      <li><a class="dropdown-item reg2"  id="regex2">(1+0)*(11+00)(00+11)*(1+0+11)(1+0+11)*(101+111)(101+111)*(1+0*+11)(1+0*+11)*</a></li>
+                    </ul>
+                </div>
+                <!-- DROP DOWN FOR DFA -->
+                <div class="dropdown d-flex my-4">
+                    <button class="btn btn-secondary dropdown-toggle w-50 my-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="Dfa">
+                      OPERATIONS
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item dfa" href="#">DFA</a></li>
+                      <li><a class="dropdown-item pda" href="#">PDA</a></li>
+                      <li><a class="dropdown-item cfg" href="#">CFG</a></li>
+                    </ul>
+                </div>
+                <div class="d-flex">
+                    <button type="button" class="btn btn-md w-50 my-2 execute" id="calcExecute">GENERATE</button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+<!-- String Check -->      
+      <div class="col-12 col-sm-3 col-md-3 col-lg-3 rounded-5 stringBox text-center">
+        <h1>String Check</h1>     
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="String goes here.." aria-label="Username" aria-describedby="basic-addon1" id="inpBox">
+          </div>
+            <div class="row mt-5">
+              <div class="col-sm-12 d-flex justify-content-center">
+                  <button type="button" class="btn btn-lg mx-2" id="calcExecuteInput">CHECK</button>
+                  <button type="button" class="btn btn-lg checker mx-2"  id="calcValidate" disabled>...</button> 
+                  <button type="button" class="btn btn-lg mx-2" id="strSimulate">SIMULATE</button>           
+              </div>
+            </div>
+      </div>  
+      
+
+        <!-- BOTTOM SIDE OF SCREEN -->
+      <div class="bottomcontainer-fluid">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-6 mt-5 rounded-5 solution text-center"> 
+            <h6 class="sol">REGULAR EXPRESSION:</h6>
+              <h1></h1>
+              <h2 class="regexChosen">(bab)*(b+a)(bab+aba)(a+b)*(aa+bb)*(b+a+bb)(a+b)*(aa+bb)</h2>
+              <h1 class="automataChosen">DFA:</h1>
+              <br>
+              <section class="graphChosen" id="graph1">
+                  <div class="circ1 inititial-state" id="q0">-</div>
+                    <div class="circ1aArrowTo2">a</div>
+                    <div class="circ1bArrowTo3">b</div>
+                  <div class="circ2" id ="q1"></div>
+                    <div class="circ2aArrowTo4">a</div>
+                    <div class="circ2bArrowTo5">b</div>
+                  <div class="circ3" id ="q2"></div>  
+                    <div class="circ3bArrowTo5">b</div>
+                    <div class="circ3aArrowTo6">a</div>
+                  <div class="circ4" id = 'q3'></div>
+                    <div class="circ4bArrowTo7">b</div>
+                  <div class="circ5" id = 'q4'></div>
+                    <div class="circ5aArrowTo8">a</div>
+                  <div class="circ6" id = 'q5'></div>
+                    <div class="circ6bArrowTo9">b</div>
+                  <div class = "circ7" id = 'q6'></div>
+                    <div class="circ7aArrowTo10">a</div>
+                  <div class="circ8" id="q7"></div>
+                    <div class="circ8bArrowTo10">b</div>
+                  <div class="circ9" id="q8"></div>
+                    <div class="circ9aArrowTo10">a</div>
+                    <div class="circ9bArrowTo3"></div>
+                    <div class="circ9bArrowTo3vert"></div>
+                    <div class="circ9bArrowTo3hori">b</div>
+                  <div class="circ10" id="q9"></div>
+                    <div class="circ10abArrowTo11">a,b</div>
+                  <div class="circ11" id="q10"></div>
+                    <div class="circ11aArrowTo12">a</div>
+                    <div class="circ11bArrowTo13up"></div>
+                    <div class="circ11bArrowTo13hori">b</div>
+                    <div class="circ11bArrowTo13down"></div>
+                  <div class="circ12" id="q11"></div>
+                    <div class="circ12aArrowTo14">a</div>
+                    <div class="circ12bArrowTo13up"></div>
+                    <div class="circ12bArrowTo13hori">b</div>
+                    <div class="circ12bArrowTo13down"></div>
+                  <div class="circ13" id="q12"></div>
+                    <div class="circ13aArrowTo12down"></div>
+                    <div class="circ13aArrowTo12hori">a</div>
+                    <div class="circ13aArrowTo12up"></div>
+                    <div class="circ13bArrowTo15">b</div>
+                  <div class="circ14" id="q13">+</div>
+                    <div class="circ14aArrowTo14down"></div>
+                    <div class="circ14aArrowTo14hori">a</div>
+                    <div class="circ14aArrowTo14up"></div>
+                    <div class="circ14bArrowTo13">b</div>
+                  <div class="circ15" id="q14">+</div>
+                    <div class="circ15aArrowTo12down"></div>
+                    <div class="circ15aArrowTo12hori">a</div>
+                    <div class="circ15aArrowTo12up"></div>
+                    <div class="circ15bArrowTo15down"></div>
+                    <div class="circ15bArrowTo15hori">b</div>
+                    <div class="circ15bArrowTo15up"></div>                
+              </section>
+            </div>
+        </div> 
+      </div> 
+
+      <script src="src/jquery-3.7.0.min.js"></script> 
+    <script src="js\bootstrap.bundle.min.js"></script>
+    <script src="src\letters.js"></script>
+  </body>
+</html>

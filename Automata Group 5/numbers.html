@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AUTOMATA</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/numbers.css">
+    <script type="text/javascript" src="src/DFA.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 rounded-5 " >
+<!-- DROPDROWN FOR REGEX-->
+                <div class="dropdown d-flex">
+                    <button class="btn btn-secondary dropdown-toggle w-50 my-2 " type="button" data-bs-toggle="dropdown" aria-expanded="false" id="regEx">
+                      REGULAR EXPRESSIONS
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item reg1"  id="regex1">(bab)*(b+a)(bab+aba)(a+b)*(aa+bb)*(b+a+bb)(a+b)*(aa+bb)</a></li>
+                      <li><a class="dropdown-item reg2"  id="regex2">(1+0)*(11+00)(00+11)*(1+0+11)(1+0+11)*(101+111)(101+111)*(1+0*+11)(1+0*+11)*</a></li>
+                    </ul>
+                </div>
+<!-- DROP DOWN FOR DFA -->
+                <div class="dropdown d-flex my-4">
+                    <button class="btn btn-secondary dropdown-toggle w-50 my-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="Dfa">
+                      OPERATIONS
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item dfa" href="#">DFA</a></li>
+                      <li><a class="dropdown-item pda" href="#">PDA</a></li>
+                      <li><a class="dropdown-item cfg" href="#">CFG</a></li>
+                    </ul>
+                </div>
+                <div class="d-flex">
+                    <button type="button" class="btn btn-md w-50 my-2 execute" id="calcExecute">GENERATE</button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+<!-- String Check -->           
+      <div class="col-12 col-sm-3 col-md-3 col-lg-3 rounded-5 stringBox text-center">
+        <h1>String Check</h1>   
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Input String" aria-label="Username" aria-describedby="basic-addon1" id="inpBox">
+          </div>
+            <div class="row mt-5">
+              <div class="col-sm-12 d-flex justify-content-center">
+                  <button type="button" class="btn btn-lg mx-2" id="calcExecuteInput">CHECK</button>
+                  <button type="button" class="btn btn-lg checker mx-2"  id="calcValidate" disabled>...</button> 
+                  <button type="button" class="btn btn-lg mx-2" id="strSimulate">SIMULATE</button>
+                  
+              </div>
+            </div>
+      </div>  
+      
+<!-- Answer Container -->
+      <div class="bottomcontainer-fluid">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-6 mt-5 rounded-5 solution text-center">
+            <h6 class="sol">REGULAR EXPRESSION:</h6>
+            <h1></h1>
+            <h2 class="regexChosen">(1+0)*(11+00)(00+11)*(1+0+11)(1+0+11)*(101+111)(101+111)*(1+0*+11)(1+0*+11)*</h2>
+            <h1 class="automataChosen">DFA:</h1>
+            <br>
+              <section class="graphChosen" id="graph2">
+                <div class="circ0" id ="q0">-</div>
+                  <div class="circ01ArrowTo4">1</div>
+                  <div class="circ00ArrowTo3">0</div>
+
+                <div class="circ3" id ="q1"></div> 
+                  <div class="circ31ArrowTo4">1</div>
+                  <div class="circ30ArrowTo5">0</div>
+                  
+                <div class="circ4" id ="q2"></div> 
+                  <div class="circ41ArrowTo5">1</div>
+                  <div class="circ40ArrowTo3">0</div>
+                  
+                <div class="circ5" id ="q3"></div> 
+                  <div class="circ510ArrowTo6">1,0</div>
+                  
+                <div class="circ6" id ="q4"></div> 
+                  <div class="circ61ArrowTo7">1</div>
+                  <div class="circ60ArrowTo6down"></div>
+                  <div class="circ60ArrowTo6hori">0</div>
+                  <div class="circ60ArrowTo6up"></div>
+
+                <div class="circ7" id ="q5"></div> 
+                  <div class="circ71ArrowTo9">1</div>
+                  <div class="circ70ArrowTo8">0</div>
+
+                <div class="circ9" id ="q6"></div> 
+                  <div class="circ91ArrowTo2">1</div>
+                  <div class="circ90ArrowTo8">0</div>
+
+                <div class="circ8" id ="q7"></div> 
+                  <div class="circ81ArrowTo2">1</div>
+                  <div class="circ80ArrowTo6down"></div>
+                  <div class="circ80ArrowTo6hori">0</div>
+                  
+                <div class="circ2" id ="q8">+</div>
+                  <div class="circ210ArrowTo2hori2"></div>
+                  <div class="circ210ArrowTo2hori"></div>
+                  <div class="circ210ArrowTo2up">1,0</div>
+            </section> 
+          </div>
+        </div> 
+      </div>
+
+    <script src="src/jquery-3.7.0.min.js"></script>
+    <script src="js\bootstrap.bundle.min.js"></script>   
+    <script src="src/numbers.js"></script>
+  </body>
+</html>
